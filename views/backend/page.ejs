@@ -1,0 +1,80 @@
+<%-include('common/head.ejs')-%>
+      
+
+      <title>Hello, world!</title>
+   </head>
+   <body>
+     
+<%-include('common/header.ejs')-%>
+
+
+
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            <div class="col-lg-2 sidebaare">
+               <%-include('common/siderbar.ejs')-%>
+            </div>
+           
+            <div class="col-lg-10">
+
+              <div class="dashboard-content-area">
+               <h1>All Pages</h1>
+              
+
+               
+               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                      <tr>
+                          <th>Photo</th>
+                          <th>URL</th>
+                          <th>Meta Description</th>
+                          <th>Meta Keyword</th>
+                          <th>Page heading</th>
+                          <th>Page Details</th>
+
+                          <th>Edit</th>
+                          <th>Delete</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <% x.forEach((y)=>{ %>
+
+                   
+                      <tr>
+                          <td>
+                           <% if(y.PagePhoto){%>
+                                <img src="/backend/images/<%=y.PagePhoto%>" width="100">  
+                            <%} else{%>
+                          
+                                <img src="/backend/images/download22.png" width="100">  
+                          <%}%>
+                           
+                          </td>
+                          <td><%=y.PageUrl%></td>
+                          <td><%=y.PageMetaDescription%></td>
+                          <td><%=y.PageMetaKeyword%></td>
+                          <td><%=y.PageHeading%></td>
+                          <td><%=y.PageDetails%></td>
+                          <td>
+                              <a class="btn btn-primary" href="/admin/page/add-page/<%=y.PageUrl%>">Edit</a>
+                
+                          <td>
+                              <form style="display: inline;" action="/admin/page/delete/pageId?_method=DELETE" method="POST">
+                                  <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
+                              </form>
+                          </td>
+                      </tr>
+                      <%})%>
+                </thead>
+                <tbody>
+                   
+                      <!-- Repeat the <tr> block for additional rows -->
+                  </tbody>
+              </table>
+                 
+             
+
+            
+                 <center> <br> <a class="btn btn-success btn-md" href="/admin/page/add-page/<%=x.PageUrl%>">Add More Pages</a> </center>
+            
+    <%-include('common/footer.ejs')-%>

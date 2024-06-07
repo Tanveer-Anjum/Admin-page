@@ -1,0 +1,72 @@
+<%- include('common/head.ejs')-%>
+
+<title>Online Course</title>
+</head>
+<body>
+
+
+  <%- include('common/header.ejs')-%>
+
+<div class="container-fluid bg-side-nav">
+   <div class="row">
+      <div class="col-lg-2 sidebaare">
+        
+
+
+
+        <%- include('common/siderbar.ejs')-%>
+      </div>
+      <div class="col-lg-10">
+
+        <div class="dashboard-content-area">
+          <!-- put your contente -->
+         
+          <h1 class="mb-2 mt-2">Edite page</h1>
+          <!-- <%if(x){%> -->
+
+         
+          
+          <form method="post" action="/admin/page/add-page/<%=x.PageUrl%>?_method=put" enctype="multipart/form-data">
+            
+            <div class="mb-3 mt-3 row g-9 align-items-center">  
+              <div class="col col-lg-2"><label class="form-label" >URL</label></div>
+              <div class="col"><input type="text" name ="Page_Url" class="form-control"  value="<%=x.PageUrl%>" placeholder="Page Url"></div>
+            </div>
+           
+            <div class="mb-3 mt-3 row g-9 align-items-center">           
+                <div class="col col-lg-2"><label class="form-label ">Meta Description</label></div>
+                <div class="col"><input type="text" name ="Page_Meta_Description" class="form-control" value="<%=x.PageMetaDescription%>" placeholder="Page Meta Description"></div>
+            </div>
+      
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label" >Meta Keyword</label></div>
+              <div class="col"><input type="text" name ="Page_Meta_Keyword" class="form-control" placeholder="Page Meta Keyword" value="<%=x.PageMetaKeyword%>"></div>
+            </div>
+            
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label" >h1</label></div>
+              <div class="col"><input type="text" name ="Page_Heading" class="form-control" value="<%=x.PageHeading%>" placeholder="Page Heading"></div>
+            </div>
+            
+            <div class="mb-3 mt-3 row g-9 align-items-center"> 
+              <div class="col col-lg-2"><label class="form-label" >Photo</label></div>
+              <div class="col"><input type="file" name="Page_Photo" class="form-control" value=""></div>
+            </div>
+           
+            
+            <div class="mb-3 mt-3 row g-9 align-items-center">
+              <div class="col col-lg-2"><label class="form-label" >Page Details</label></div>
+              <div class="col"><textarea rows="10" class="editor form-control Page_Details" name="Page_Details" value="<%=x.PageDetails%>" placeholder="Page Details"></textarea></div>
+            </div>
+            <!-- <% }%> -->
+
+          
+           
+      
+            <div class="mb-5 mt-3 align-items-center text-center"> 
+                 <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+     
+      
+        <%- include('common/footer.ejs')-%>
