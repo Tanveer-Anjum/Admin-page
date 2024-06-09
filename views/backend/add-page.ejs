@@ -50,13 +50,13 @@
             
             <div class="mb-3 mt-3 row g-9 align-items-center"> 
               <div class="col col-lg-2"><label class="form-label" >Photo</label></div>
-              <div class="col"><input type="file" name="Page_Photo" class="form-control" value=""></div>
+              <div class="col"><input type="file" name="Page_Photo" class="form-control" value="<%=x.PagePhoto%>"></div>
             </div>
            
             
             <div class="mb-3 mt-3 row g-9 align-items-center">
               <div class="col col-lg-2"><label class="form-label" >Page Details</label></div>
-              <div class="col"><textarea rows="10" class="editor form-control Page_Details" name="Page_Details" value="<%=x.PageDetails%>" placeholder="Page Details"></textarea></div>
+              <div class="col" id="editor"><textarea rows="10" class="editor form-control Page_Details" id="editor" name="Page_Details"  placeholder="Page Details" values="<%=x.PageDetails%>" ></textarea></div>
             </div>
             <!-- <% }%> -->
 

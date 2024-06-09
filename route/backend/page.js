@@ -91,15 +91,15 @@ router.get('/', (req, res) => {
 });
 
 
-
-router.get('/add-page/', (req, res) => {
-    res.render('../views/backend/add-page',{x:true});
+//route for add-pages
+router.get('/add-pages/', (req, res) => {
+    res.render('../views/backend/add-pages',{x:true});
 
 });
 
 
 
-router.post('/add-page', upload.single('Page_Photo'), (req, res) => {
+router.post('/add-page/add-pages', upload.single('Page_Photo'), (req, res) => {
     mongoose.findOne({ PageUrl: req.body.Page_Url })
         .then((a) => {
             if (a) {
@@ -152,6 +152,17 @@ router.put('/add-page/:id' , upload.single('Page_Photo'), (req, res) => {
     .then((x)=>{
         res.redirect('/admin/page/')
     })
+})
+
+router.delete('/delete-page/:id',(req,res)=>{
+
+    mongoose.deleteOne({ PageUrl:req.params.id})
+
+    .then((x)=>{
+
+        res.redirect('/admin/page/')
+    })
+
 })
 
 module.exports = router;

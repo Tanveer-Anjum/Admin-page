@@ -59,7 +59,7 @@
                               <a class="btn btn-primary" href="/admin/page/add-page/<%=y.PageUrl%>">Edit</a>
                 
                           <td>
-                              <form style="display: inline;" action="/admin/page/delete/pageId?_method=DELETE" method="POST">
+                              <form style="display: inline;" action="/admin/page/delete-page/<%=y.PageUrl%>?_method=DELETE" method="POST">
                                   <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Delete</button>
                               </form>
                           </td>
@@ -75,6 +75,6 @@
              
 
             
-                 <center> <br> <a class="btn btn-success btn-md" href="/admin/page/add-page/<%=x.PageUrl%>">Add More Pages</a> </center>
+                 <center> <br> <a class="btn btn-success btn-md" href="/admin/page/add-pages<%=x.PageUrl%>">Add More Pages</a> </center>
             
     <%-include('common/footer.ejs')-%>
