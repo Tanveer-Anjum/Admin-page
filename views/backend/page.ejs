@@ -1,7 +1,7 @@
 <%-include('common/head.ejs')-%>
       
 
-      <title>Hello, world!</title>
+      <title>Admin</title>
    </head>
    <body>
      
@@ -31,6 +31,7 @@
                           <th>Meta Keyword</th>
                           <th>Page heading</th>
                           <th>Page Details</th>
+                          <th>Page Title</th>
 
                           <th>Edit</th>
                           <th>Delete</th>
@@ -55,6 +56,7 @@
                           <td><%=y.PageMetaKeyword%></td>
                           <td><%=y.PageHeading%></td>
                           <td><%=y.PageDetails%></td>
+                          <td><%=y.PageTitle%></td>
                           <td>
                               <a class="btn btn-primary" href="/admin/page/add-page/<%=y.PageUrl%>">Edit</a>
                 

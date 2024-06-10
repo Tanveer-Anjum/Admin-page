@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ 
+<%-include('common/head.ejs')-%>
+    <title><%=x.PageTitle%></title>
+
+    <meta name="description" content="<%=x.PageMetaDescription%>" />
+<meta name="keywords" content="<%=x.PageMetaKeyword%>" />
+
+
+  </head>
+  
+  <body>
+
+
+    <%-include('common/header.ejs')-%>
+
+
+    <img src="/backend/images/<%=x.PagePhoto%>" max-width="100%" class="rounded mx-auto d-block mt-3" >
+   
+
+ <div class="container bg-primary text-center mt-2">
+ 
+
+
+  <div style>
+    <h1><%=x.PageHeading%></h1>
+  </div>
+
+ 
+   <div style="width:100%;">
+    <%-x.PageDetails-%>
+   </div>
+ 
+
+ </div>
+ <%-include('common/footer.ejs')-%>
+  </body>
+</html>

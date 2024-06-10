@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="home.html">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+         <%navdata.forEach((y)=>{%>
+
+          <li class="nav-item">
+            <a class="nav-link active text-white" href=" <%=y.PageUrl%>"><%=y.PageTitle%></a></li>
+
+         <%})%>
+         <!-- //navbar -->
+        
+          <!-- </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="Service.html">Service</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="Contect.html">Contect</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="About.html">About</a>
+          </li>
+          -->
+        </ul>
+        <div class="d-flex">
+            <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active text-white" href="#">Login /logOut
+        
+            </a>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

@@ -9,7 +9,8 @@ const productSchema = new mongoose.Schema({
     PageMetaKeyword:String,
     PageHeading:String,
     PagePhoto : String,
-    PageDetails:String
+    PageDetails:String,
+    PageTitle:String
 
 });
 module.exports = mongoose.model('products',productSchema)

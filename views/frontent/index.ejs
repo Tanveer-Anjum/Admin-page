@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ 
+<%-include('common/head.ejs')-%>
+    <title></title>
+
+
+  </head>
+  <body>
+
+
+    <%-include('common/header.ejs')-%>
+    
+
+
+
+
+  <section>
+    <div class="container">
+  <%x.forEach((y)=>{%>
+
+   <%=y.PageHeading%>
+   <br>
+   <%y.PageMetaKeyword%>
+   <br>
+   
+   <%-y.PageDetails-%>
+
+   <a href="<%=y.PageUrl%>">More Details>>></a>
+   
+   <hr>
+   
+  <%})%>
+ 
+    </div>
+  </section>
+  
+
+ </div>
+ <%-include('common/footer.ejs')-%>
+  </body>
+</html>

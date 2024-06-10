@@ -24,6 +24,7 @@ require('dotenv').config();
 let app = express();
 
 // ejs 
+let mongoose = require('./Models/mogoofile')
 
 app.set('view engine','ejs');
 
@@ -40,23 +41,42 @@ app.use(express.json());
 
 
 
+
+
+
 const PORT = process.env.PORT||3000;
 
+//backend route
 
 // it import from admin files
 let admin = require('./route/backend/admin');
 app.use('/admin',admin);
 
+//for dynamic
+
+app.use((req, res, next) => {
+  mongoose.find({})
+    .then((x) => {
+      res.locals.navdata = x;
+      next();
+    })
+    .catch((err) => {
+      console.error(err);
+      next();
+    });
+});
+
+// backend route
 // it import from admin page
 let pageroute = require('./route/backend/page');
 app.use('/admin/page',pageroute);
 
+// frontent route:
 
-app.get('/',(req,res)=>{
+let headroute = require('./route/frontend/header');
+app.use('/',headroute);
 
-    res.send("this is froned page");
-    
-});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });

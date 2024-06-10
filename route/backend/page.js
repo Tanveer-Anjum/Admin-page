@@ -70,7 +70,8 @@ mongoose.find({})
 .then((x)=>{
   
     res.render('../views/backend/page',{x});
-     console.log(x);
+    // console.log(x);
+   
 })
    .catch((y)=>{
     console.log(y);
@@ -107,10 +108,13 @@ router.post('/add-page/add-pages', upload.single('Page_Photo'), (req, res) => {
             } else {
                 const pageData = {
                     PageUrl: req.body.Page_Url,
+                   
                     PageMetaDescription: req.body.Page_Meta_Description,
                     PageMetaKeyword: req.body.Page_Meta_Keyword,
                     PageHeading: req.body.Page_Heading,
+                    PagePhoto :req.body.Page_Photo,
                     PageDetails: req.body.Page_Details,
+                    PageTitle:req.body.Page_Title,
                 };
                 if (req.file) {
                     pageData.PagePhoto = req.file.filename;
@@ -147,7 +151,7 @@ router.put('/add-page/:id' , upload.single('Page_Photo'), (req, res) => {
         PageMetaKeyword: req.body.Page_Meta_Keyword,
         PageHeading: req.body.Page_Heading,
         PageDetails: req.body.Page_Details,
-        // PagePhoto: req.file.filename
+//PagePhoto: req.file.filename
     }})
     .then((x)=>{
         res.redirect('/admin/page/')
